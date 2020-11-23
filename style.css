@@ -4,10 +4,14 @@ body {
     overflow: hidden;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500&display=swap');
+
+
 * {
     padding: 0;
     box-sizing: border-box;
     margin: 0;
+    font-family: 'Saira Condensed', sans-serif;
 }
 
 :root {
@@ -25,6 +29,7 @@ span {
     flex-direction: column;
     text-align: center;
     align-items: center;
+    margin-top: 10px;
 
 }
 
@@ -32,9 +37,9 @@ input {
     padding: 15px;
     background-color: var(--light-color);
     margin-top: 20px;
-    font-size: 22pt;
     border-radius: 5px;
     border: none;
+    font-size: X-large;
 }
 
 input:focus {
@@ -45,9 +50,9 @@ input:focus {
 #btn {
     padding: 10px;
     margin: 20px auto;
-    font-size: 22pt;
     border-radius: 10px;
     transform: rotate(-5deg);
+    font-size: larger;
 
 }
 
@@ -68,7 +73,7 @@ input:focus {
 h1 {
     color: var(--light-color);
     text-align: center;
-    font-size: 3em;
+    font-size: xx-large;
 }
 
 #check {
@@ -78,13 +83,5 @@ h1 {
     width: 100%;
     justify-content: center;
     color: var(--light-color);
-    
+}
 
-}
-#f{
-   margin-left: 50px;
-   width: 30px;
-}
-#m{
-    width: 30px;
-}
