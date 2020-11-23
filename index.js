@@ -16,8 +16,7 @@ btn.addEventListener("click", (checarRadio) => {
   checarRadio = () => {
     if (sexo[0].checked) {
       sexoEscolha = "Masculino";
-    }
-    if (sexo[1].checked) {
+    } else {
       sexoEscolha = "Feminino";
     }
   };
@@ -25,8 +24,7 @@ btn.addEventListener("click", (checarRadio) => {
 
   if (about.name + about.age == "" || about.age <= 0) {
     Swal.fire({
-      icon: "error",
-      title: "Oops...",
+      title: "Oops🚨",
       text: "Preencha os campos corretamente!",
     });
   } else {
