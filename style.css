@@ -1,0 +1,90 @@
+body {
+    background-color: var(--dark-color);
+    background-image: url(Speedline-2s-1360px.svg);
+    overflow: hidden;
+}
+
+* {
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --light-color: #f7f1e3;
+    --dark-color: #4b4b4b;
+    --details: #6c5ce7;
+}
+
+span {
+    margin: 20px;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+}
+
+input {
+    padding: 15px;
+    background-color: var(--light-color);
+    margin-top: 20px;
+    font-size: 22pt;
+    border-radius: 5px;
+    border: none;
+}
+
+input:focus {
+    background-color: var(--details);
+    color: var(--light-color);
+}
+
+#btn {
+    padding: 10px;
+    margin: 20px auto;
+    font-size: 22pt;
+    border-radius: 10px;
+    transform: rotate(-5deg);
+
+}
+
+#btnDiv {
+    background-color: var(--details);
+    transform: rotate(5deg);
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    z-index: -1;
+}
+
+#btn:hover {
+    background-color: var(--details);
+    color: var(--light-color);
+}
+
+h1 {
+    color: var(--light-color);
+    text-align: center;
+    font-size: 3em;
+}
+
+#check {
+    display: flex;
+    align-items: baseline;
+    margin: 20px;
+    width: 100%;
+    justify-content: center;
+    color: var(--light-color);
+    
+
+}
+#f{
+   margin-left: 50px;
+   width: 30px;
+}
+#m{
+    width: 30px;
+}
