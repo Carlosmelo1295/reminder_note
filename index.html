@@ -4,26 +4,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Form com js</title>
+  <title>Task list</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <div id="container">
-    <h1>Formulário📝</h1>
-
-    <input class="inp" id="newInputName" placeholder="Nome" type="text" />
-    <input class="inp" id="newInputLastName" placeholder="Sobrenome" type="text" />
-    <input class="inp" id="newInputAge" placeholder="Idade" type="number" />
-
-    <div id="check">
-      <span>Masculino👦🏽</span><input type="radio" name="sexo" value="masculino" id="sexo" checked />
-      <span>Feminino👧🏽</span><input type="radio" name="sexo" value="feminino" id="sexo" />
+  <div class="container">
+    <div class="containerTextInput">
+      <h3>💡Entrada de dados</h3>
+      <input class="inp" placeholder="Assunto para estudar" id="materia" type="text" />
+      <textarea name="assunto" id="assunto" placeholder="Descrição" class="inp" cols="20" rows="2"></textarea>
     </div>
 
-    <div id="btnDiv">
-      <button id="btn" value="submit">Enviar🚀</button>
+    <div class="checkRadio">
+      <h4>Escolha um período</h4>
+      <span>Indefinido🤡</span><input type="radio" class="radio" name="periodo" value="Indefinido" checked />
+      <span>Manha‍☀️</span><input type="radio" class="radio" name="periodo" value="manha" />
+      <span>Tarde⛅</span><input type="radio" class="radio" name="periodo" value="tarde" />
+      <span>Noite🌑</span><input type="radio" class="radio" name="periodo" value="noite" />
     </div>
+
+    <div class="buttonBox"></div>
+
+    <h3>Saída de dados🎉</h3>
+    <div class="outPut">
+    </div>
+
   </div>
 
   <script src="index.js"></script>
