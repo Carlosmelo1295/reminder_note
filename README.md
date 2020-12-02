@@ -1,3 +1,5 @@
-<h1>To-do-list</h1>
+<h1> To-do-list </h1>
 
-<p>Projeto para auxiliar na hora de organizar suas tarefas. </p>
+<h3>Projeto para auxiliar na hora de organizar suas tarefas. </h3>
+
+<h5> Com uma interface simples e amigável, você consegue organizar suas tarefas por períodos</h5>
