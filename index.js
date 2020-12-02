@@ -4,7 +4,7 @@ let newButton;
 
 const $periodos = document.getElementsByName("periodo");
 
-let inputMateria = document.querySelector("#materia");
+let inputMateria = document.querySelector("#tarefa");
 let inputAssunto = document.querySelector("#assunto");
 
 //➖➖➖➖➖➖➖➖➖➖➖➖➖➖👽➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
