@@ -1,8 +1,12 @@
 body {
-  font-family: 'VT323', monospace;
-  background-image: url(Speedline-2s-1360px.svg);
-  overflow-x: hidden;
-  position: relative;
+  font-family: "VT323", monospace;
+  letter-spacing: 1px;
+  width: 100%;
+  height: 100%;
+  background-image: url(background/Add\ notes-pana.svg);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-attachment: fixed;
 }
 
 * {
@@ -30,12 +34,11 @@ header {
   text-align: center;
   width: 100%;
   height: 100vh;
+  display: flex;
 }
 
 .containerTextInput {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: calc(100% - 40%);
 }
 
 .inp {
@@ -47,7 +50,7 @@ header {
   background-color: var(--dark-color);
   color: var(--light-color);
   width: calc(100% - 20%);
-  letter-spacing: 2px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 h3,
@@ -55,6 +58,7 @@ h4 {
   color: var(--details);
   margin-top: 10px;
   font-size: x-large;
+  text-shadow: 0 0 3px black;
 }
 
 .checkRadio {
@@ -80,17 +84,40 @@ h4 {
 
 .outPut {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: center;
+  width: 40%;
+  overflow-y: scroll;
 }
 
-footer {
-  background-color: var(--background);
-  color: var(--light-color);
-  text-align: center;
-  padding: 8px;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  clear: both;
+@media only screen and (max-width: 650px) {
+  body {
+    background-color: lightblue;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .outPut {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    overflow: visible;
+  }
+
+  .containerTextInput {
+    width: 100%;
+  }
+
+  .inp {
+    width: 95%;
+  }
+
+  .checkRadio {
+    width: 95%;
+  }
 }

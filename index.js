@@ -1,5 +1,4 @@
 "use strict";
-
 let newButton;
 
 const $periodos = document.getElementsByName("periodo");
@@ -19,10 +18,11 @@ function createButton(buttonTxt, callbackButton) {
 
   return newButton;
 }
+
 createButton("Adicionar➕", (buttonSubmit) => {
   buttonSubmit.style.cssText = `
   color: #f7f1e3;
-  background-color: #6c5ce7;
+  background-color: #f53b57;
   padding: 10px;
   margin: 5px;
   border-radius: 5px;
@@ -37,10 +37,6 @@ createButton("Adicionar➕", (buttonSubmit) => {
       let $newElement = document.createElement("div");
       const $outPut = document.querySelector(".outPut");
       $outPut.insertAdjacentElement("beforeend", $newElement);
-
-      let icon = document.createElement("img");
-      $newElement.insertAdjacentElement("afterend", icon).src =
-        "icons/icons8-checkmark.svg";
 
       //remover  div criada
       $newElement.addEventListener("click", () => {
@@ -71,7 +67,7 @@ createButton("Adicionar➕", (buttonSubmit) => {
         radioResult = "Noite";
       }
 
-      $newElement.innerHTML = `${inputMateria.value} <br> ${inputAssunto.value} <br> ${radioResult}`.toUpperCase();
+      return ($newElement.innerHTML = `Tarefa: ${inputMateria.value} <br> Descrição: ${inputAssunto.value} <br> No horário da: ${radioResult}`.toUpperCase());
     };
 
     newInput((style) => {
@@ -80,26 +76,29 @@ createButton("Adicionar➕", (buttonSubmit) => {
 		  background-color: #f7f1e3;
 		  border-radius: 10px;
 		  padding: 20px;
-		  font-size: 20pt;
-		  margin: 20px 20px ;
+		  font-size: 21pt;
+      margin: 10px 20px;
+      border: 3px solid #f53b57;
+      word-wrap: break-word;
 			`;
     });
   });
 
   buttonSubmit.addEventListener("mouseup", () => {
-    buttonSubmit.style.background = "#6c5ce7";
+    buttonSubmit.style.background = "#f53b57";
     buttonSubmit.style.scale = "1.0";
   });
 
   buttonSubmit.addEventListener("mousedown", () => {
-    buttonSubmit.style.background = "#f53b57";
+    buttonSubmit.style.background = "#6c5ce7";
     buttonSubmit.style.scale = "0.95";
   });
+});
 
-  createButton("Limpar➖", (buttonClear) => {
-    buttonClear.style.cssText = `
+createButton("Limpar➖", (buttonClear) => {
+  buttonClear.style.cssText = `
    color: #f7f1e3;
-   background-color: #6c5ce7;
+   background-color: #f53b57;
    padding: 10px;
    margin: 5px;
    border-radius: 5px;
@@ -107,19 +106,18 @@ createButton("Adicionar➕", (buttonSubmit) => {
 	box-shadow: 0 0 7px black;
   `;
 
-    buttonClear.addEventListener("mouseup", () => {
-      buttonClear.style.background = "#6c5ce7";
-      buttonClear.style.scale = "1.0";
-    });
+  buttonClear.addEventListener("mouseup", () => {
+    buttonClear.style.background = "#f53b57";
+    buttonClear.style.scale = "1.0";
+  });
 
-    buttonClear.addEventListener("mousedown", () => {
-      buttonClear.style.background = "#f53b57";
-      buttonClear.style.scale = "0.90";
-    });
+  buttonClear.addEventListener("mousedown", () => {
+    buttonClear.style.background = "#6c5ce7";
+    buttonClear.style.scale = "0.90";
+  });
 
-    buttonClear.addEventListener("click", () => {
-      inputMateria.value = "";
-      inputAssunto.value = "";
-    });
+  buttonClear.addEventListener("click", () => {
+    inputMateria.value = "";
+    inputAssunto.value = "";
   });
 });
