@@ -53,6 +53,21 @@ header {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+#horaInicio {
+  background-color: var(--background);
+}
+
+#horaFim {
+  background-color: var(--details);
+}
+
+.horarios {
+  font-size: 17pt;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
 h3,
 h4 {
   color: var(--details);
@@ -115,9 +130,11 @@ h4 {
 
   .inp {
     width: 95%;
+    font-size: 18pt;
   }
 
   .checkRadio {
     width: 95%;
+
   }
 }

@@ -6,6 +6,9 @@ const $periodos = document.getElementsByName("periodo");
 let inputMateria = document.querySelector("#tarefa");
 let inputAssunto = document.querySelector("#assunto");
 
+const inpTime = document.querySelector("#horaInicio");
+const outTime = document.querySelector("#horaFim");
+
 //➖➖➖➖➖➖➖➖➖➖➖➖➖➖👽➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
 
 function createButton(buttonTxt, callbackButton) {
@@ -41,7 +44,6 @@ createButton("Adicionar➕", (buttonSubmit) => {
       //remover  div criada
       $newElement.addEventListener("click", () => {
         $newElement = $newElement.remove();
-        icon = icon.remove();
       });
       //efeito de mouse hover
       $newElement.addEventListener("mouseover", () => {
@@ -58,7 +60,7 @@ createButton("Adicionar➕", (buttonSubmit) => {
       callbackInput($newElement);
 
       if ($periodos[0].checked) {
-        radioResult = " ";
+        radioResult = "Indefinido";
       } else if ($periodos[1].checked) {
         radioResult = "Manhã";
       } else if ($periodos[2].checked) {
@@ -67,7 +69,15 @@ createButton("Adicionar➕", (buttonSubmit) => {
         radioResult = "Noite";
       }
 
-      return ($newElement.innerHTML = `Tarefa: ${inputMateria.value} <br> Descrição: ${inputAssunto.value} <br> No horário da: ${radioResult}`.toUpperCase());
+      return $newElement.innerHTML = `Tarefa: ${inputMateria.value.fontcolor("#FC427B")}
+       <br>
+       Descrição: ${inputAssunto.value.fontcolor("#1B9CFC")} 
+       <br>
+       Período: ${radioResult.fontcolor("#F97F51")}
+       <br>
+       Inicio: ${inpTime.value.fontcolor("#a55eea")}
+       <br>
+       Fim: ${outTime.value}`;
     };
 
     newInput((style) => {

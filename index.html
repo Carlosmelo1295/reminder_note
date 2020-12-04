@@ -12,6 +12,8 @@
 <body>
   <header>
     <h1>Faça sua Lista!</h1>
+    <i>Para uma melhor experiência, experimente junto com o <a href="https://tklao.github.io/Tomatao/"
+        target="_blank">Tomatão!</a></i>
   </header>
 
   <div class="container">
@@ -21,11 +23,24 @@
       <textarea name="assunto" id="assunto" maxlength="50" placeholder="Descrição" class="inp"></textarea>
 
       <div class="checkRadio">
-        <h4>Escolha um período</h4>
-        <span>Indefinido🤡</span><input type="radio" class="radio" name="periodo" value="Indefinido" checked />
-        <span>Manha‍☀️</span><input type="radio" class="radio" name="periodo" value="manha" />
-        <span>Tarde⛅</span><input type="radio" class="radio" name="periodo" value="tarde" />
-        <span>Noite🌑</span><input type="radio" class="radio" name="periodo" value="noite" />
+        <h4>Escolha um período ou horário específico</h4>
+        <div>
+          <span>Indefinido🤡</span><input type="radio" class="radio" name="periodo" value="Indefinido" checked />
+        </div>
+        <div>
+          <span>Manha‍☀️</span><input type="radio" class="radio" name="periodo" value="manha" />
+        </div>
+        <div>
+          <span>Tarde⛅</span><input type="radio" class="radio" name="periodo" value="tarde" />
+        </div>
+        <div>
+          <span>Noite🌑</span><input type="radio" class="radio" name="periodo" value="noite" />
+        </div>
+
+        <div class="horarios">
+          <input type="time" class="horarios" name="" id="horaInicio" />
+          <input type="time" class="horarios" name="" id="horaFim" />
+        </div>
       </div>
 
       <div class="buttonBox"></div>
