@@ -2,57 +2,50 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Task list</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Task list</title>
+	<link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <header>
-    <h1>Faça sua Lista!</h1>
-    <i>Para uma melhor experiência, experimente junto com o <a href="https://tklao.github.io/Tomatao/"
-        target="_blank">Tomatão!</a></i>
-  </header>
+	<div class="container">
+		<div class="containerTextInput">
+			<header></header>
 
-  <div class="container">
-    <div class="containerTextInput">
-      <h3>💡Entrada de dados</h3>
-      <input class="inp" placeholder="Tarefa" maxlength="20" id="tarefa" type="text" />
-      <textarea name="assunto" id="assunto" maxlength="50" placeholder="Descrição" class="inp"></textarea>
+			<input class="inp" placeholder="Tarefa" maxlength="20" id="tarefa" type="text" />
+			<textarea name="assunto" id="assunto" maxlength="50" placeholder="Descrição" class="inp"></textarea>
 
-      <div class="checkRadio">
-        <h4>Escolha um período ou horário específico</h4>
-        <div>
-          <span>Indefinido🤡</span><input type="radio" class="radio" name="periodo" value="Indefinido" checked />
-        </div>
-        <div>
-          <span>Manha‍☀️</span><input type="radio" class="radio" name="periodo" value="manha" />
-        </div>
-        <div>
-          <span>Tarde⛅</span><input type="radio" class="radio" name="periodo" value="tarde" />
-        </div>
-        <div>
-          <span>Noite🌑</span><input type="radio" class="radio" name="periodo" value="noite" />
-        </div>
+			<div class="checkRadio">
+				<h4>Escolha um período ou horário específico</h4>
+				<div>
+					<span>Indefinido🤡</span><input type="radio" class="radio" name="periodo" value="Indefinido"
+						checked />
+				</div>
+				<div>
+					<span>Manha‍☀️</span><input type="radio" class="radio" name="periodo" value="manha" />
+				</div>
+				<div>
+					<span>Tarde⛅</span><input type="radio" class="radio" name="periodo" value="tarde" />
+				</div>
+				<div>
+					<span>Noite🌑</span><input type="radio" class="radio" name="periodo" value="noite" />
+				</div>
 
-        <div class="horarios">
-          <input type="time" class="horarios" name="" id="horaInicio" />
-          <input type="time" class="horarios" name="" id="horaFim" />
-        </div>
-      </div>
+				<div class="horarios">
+					<input type="time" class="horarios" id="horaInicio" />
+					<input type="time" class="horarios" id="horaFim" />
+				</div>
+			</div>
 
-      <div class="buttonBox"></div>
-    </div>
+			<div class="buttonBox"></div>
+		</div>
 
-    <div class="outPut">
-      <h3>Saída de dados🎉</h3>
-    </div>
-  </div>
-
-  <script src="index.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+		<div class="outPut"></div>
+	</div>
+	<script src="darkMode.js"></script>
+	<script src="index.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
 
 </html>
