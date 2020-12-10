@@ -11,20 +11,20 @@ const outTime = document.querySelector("#horaFim");
 //➖➖➖➖➖➖➖➖➖➖➖➖➖➖👽➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
 
 function createButton(buttonTxt, callbackButton) {
-	newButton = document.createElement("button");
-	newButton.textContent = buttonTxt;
-	const $buttonBox = document.querySelector(".buttonBox");
-	$buttonBox.insertAdjacentElement("beforeend", newButton);
+  newButton = document.createElement("button");
+  newButton.textContent = buttonTxt;
+  const $buttonBox = document.querySelector(".buttonBox");
+  $buttonBox.insertAdjacentElement("beforeend", newButton);
 
-	callbackButton(newButton);
+  callbackButton(newButton);
 
-	return newButton;
+  return newButton;
 }
 
 createButton("Adicionar➕", (buttonSubmit) => {
-	buttonSubmit.style.cssText = `
+  buttonSubmit.style.cssText = `
   color: #120f16;
-  background-color: #e9e4ee;
+  background-image: linear-gradient(to right top, #a63bf8, #914afa, #7b55fa, #655df9, #4c64f6, #2f77fc, #0e87ff, #0096ff, #00b2ff, #00caff, #00dff6, #15f2e4);
   padding: 10px;
   margin: 5px;
   border-radius: 5px;
@@ -32,81 +32,97 @@ createButton("Adicionar➕", (buttonSubmit) => {
   box-shadow: 0 0 10px black;
 	`;
 
-	//💩
+  //💩
 
-	buttonSubmit.addEventListener("click", (radioResult, newInput) => {
-		newInput = (callbackInput) => {
-			let $newElement = document.createElement("li");
-			const $outPut = document.querySelector(".outPut");
-			$outPut.insertAdjacentElement("beforeend", $newElement);
+  buttonSubmit.addEventListener("click", (radioResult, newInput) => {
+    newInput = (callbackInput) => {
+      let $newElement = document.createElement("li");
+      const $outPut = document.querySelector(".outPut");
+      $outPut.insertAdjacentElement("beforeend", $newElement);
 
-			//remover div criada
-			$newElement.addEventListener("click", () => {
-				$newElement = $newElement.remove();
-			});
-			//efeito de mouse hover
-			$newElement.addEventListener("mouseover", () => {
-				$newElement.style.backgroundColor = "red";
-				$newElement.style.color = "#f7f1e3";
-				$newElement.style.cursor = "not-allowed";
-			});
-			//tirar efeito de mouse
-			$newElement.addEventListener("mouseleave", () => {
-				$newElement.style.backgroundColor = "#ffd166";
-				$newElement.style.color = "#2d3436";
-			});
+      //remover div criada
 
-			callbackInput($newElement);
+      $newElement.addEventListener("click", () => {
+        Swal.fire({
+          title: "Deseja mesmo excluir?",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Sim, excluir!",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            $newElement = $newElement.remove();
+            Swal.fire("Deletado!", "Sua tarefa foi excluída", "success");
+          }
+        });
+      });
 
-			if ($periodos[0].checked) {
-				radioResult = "Indefinido";
-			} else if ($periodos[1].checked) {
-				radioResult = "Manhã";
-			} else if ($periodos[2].checked) {
-				radioResult = "Tarde";
-			} else {
-				radioResult = "Noite";
-			}
+      //efeito de mouse hover
+      $newElement.addEventListener("mouseover", () => {
+        $newElement.style.color = "#f7f1e3";
+        $newElement.style.cursor = "not-allowed";
+      });
+      //tirar efeito de mouse
+      $newElement.addEventListener("mouseleave", () => {
+        $newElement.style.color = "#2d3436";
+      });
 
-			$newElement.innerHTML = `<br> Tarefa: ${inputMateria.value}
-       <br>
-       Descrição: ${inputAssunto.value} 
-       <br>
-       Período: ${radioResult}
-       <br>
-       Inicio: ${inpTime.value}
-       <br>
-       Fim: ${outTime.value}`;
-		};
+      callbackInput($newElement);
 
-		newInput((style) => {
-			style.style.cssText = `
-		  color: #120f16;
-		  background-color:  #ffd166;
+      if ($periodos[0].checked) {
+        radioResult = "Indefinido";
+      } else if ($periodos[1].checked) {
+        radioResult = "Manhã";
+      } else if ($periodos[2].checked) {
+        radioResult = "Tarde";
+      } else {
+        radioResult = "Noite";
+      }
+
+      const saida = {};
+      Object.defineProperty(saida, "Tarefa", {
+        enumerable: true,
+        value: inputMateria.value,
+      });
+
+      Object.defineProperty(saida, "Descrição", {
+        enumerable: true,
+        value: inputAssunto.value,
+      });
+
+      Object.defineProperty(saida, "Período", {
+        enumerable: true,
+        value: radioResult,
+      });
+
+      Object.defineProperty(saida, "Inicio", {
+        enumerable: true,
+        value: inpTime.value,
+      });
+
+      Object.defineProperty(saida, "Fim", {
+        enumerable: true,
+        value: outTime.value,
+      });
+
+      Object.entries(saida).forEach(([chave, valor]) => {
+        chave = chave.fontcolor(" #050609").toUpperCase();
+        valor = valor.fontcolor("#e9e4ee");
+        $newElement.innerHTML += `${chave}: ${valor}<br>`;
+      });
+    };
+
+    newInput((style) => {
+      style.style.cssText = `
+		  background-image: linear-gradient(to right top, #a63bf8, #914afa, #7b55fa, #655df9, #4c64f6, #2f77fc, #0e87ff, #0096ff, #00b2ff, #00caff, #00dff6, #15f2e4);
 		  border-radius: 10px;
 		  padding: 20px;
 		  font-size: 21pt;
-        margin: 10px 20px;
+          margin: 10px 20px;
 		  word-wrap: break-word;
 		  list-style: decimal;
-		  
 			`;
-		});
-	});
-});
-
-createButton("Limpar➖", (buttonClear) => {
-	buttonClear.style.cssText = `
-   color: #120f16;
-  background-color: #e9e4ee;
-   padding: 10px;
-   margin: 5px;
-   border-radius: 5px;
-   font-size: 15pt;
-	box-shadow: 0 0 10px black;
-  `;
-	buttonClear.addEventListener("click", () => {
-		inputMateria.value = "";
-		inputAssunto.value = "";
-	});
+    });
+  });
 });
