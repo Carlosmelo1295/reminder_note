@@ -4,19 +4,26 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Task list</title>
+	<title>Reminder note</title>
 	<link rel="stylesheet" href="style.css" />
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+	<header>
+		<h1>Crie seus lembretes com um simples click</h1>
+		<h3>Criado com ❤️ por Carlos Eduardo</h3>
+
+	</header>
 	<div class="container">
 		<div class="containerTextInput">
-			<header></header>
 
 			<input class="inp" placeholder="Tarefa" maxlength="20" id="tarefa" type="text" />
 			<textarea name="assunto" id="assunto" maxlength="50" placeholder="Descrição" class="inp"></textarea>
 
-			<div class="checkRadio">
+			<div class="checkRadio inp">
 				<h4>Períodos & Horários </h4>
 				<div class="divRadio">
 					<span>Indefinido</span><input type="radio" class="radio" name="periodo" value="Indefinido"
@@ -46,7 +53,7 @@
 	</div>
 	<script src="darkMode.js"></script>
 	<script src="index.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+	<script src="sweetalert2.all.min.js"></script>
 </body>
 
 </html>

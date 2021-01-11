@@ -1,4 +1,4 @@
-<h1> Reminder note </h1>
+<h1> To-do-list </h1>
 
 <h3>Projeto para auxiliar na hora de organizar suas tarefas. </h3>
 

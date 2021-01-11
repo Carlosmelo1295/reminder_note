@@ -28,7 +28,7 @@ createButton("Adicionar➕", (buttonSubmit) => {
   padding: 10px;
   margin: 5px;
   border-radius: 5px;
-  font-size: 15pt;
+  font-size: 17pt;
   box-shadow: 0 0 10px black;
 	`;
 
@@ -60,7 +60,7 @@ createButton("Adicionar➕", (buttonSubmit) => {
 
       //efeito de mouse hover
       $newElement.addEventListener("mouseover", () => {
-        $newElement.style.color = "#f7f1e3";
+        $newElement.style.color = "red";
         $newElement.style.cursor = "not-allowed";
       });
       //tirar efeito de mouse
@@ -107,9 +107,9 @@ createButton("Adicionar➕", (buttonSubmit) => {
       });
 
       Object.entries(saida).forEach(([chave, valor]) => {
-        chave = chave.fontcolor(" #050609").toUpperCase();
+        chave = chave.fontcolor(" #050609");
         valor = valor.fontcolor("#e9e4ee");
-        $newElement.innerHTML += `${chave}: ${valor}<br>`;
+        $newElement.innerHTML += `${chave}: ${valor}🏷️<br>`.toUpperCase();
       });
     };
 
@@ -119,10 +119,11 @@ createButton("Adicionar➕", (buttonSubmit) => {
 		  border-radius: 10px;
 		  padding: 20px;
 		  font-size: 21pt;
-          margin: 10px 20px;
+      margin: 10px 20px;
 		  word-wrap: break-word;
 		  list-style: decimal;
 			`;
     });
   });
 });
+
