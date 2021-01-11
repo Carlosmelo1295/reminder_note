@@ -80,6 +80,13 @@ createButton("Adicionar➕", (buttonSubmit) => {
         radioResult = "Noite";
       }
 
+      if (inpTime.value == "") {
+        inpTime.value = "00:00"
+      }
+      if (outTime.value == "") {
+        outTime.value = "00:00"
+      }
+
       const saida = {};
       Object.defineProperty(saida, "Tarefa", {
         enumerable: true,
@@ -126,4 +133,3 @@ createButton("Adicionar➕", (buttonSubmit) => {
     });
   });
 });
-
